@@ -1,0 +1,35 @@
+<html>
+  <head>
+      <link href="./css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <script src="vue.min.js"></script>
+    <script src="../lodash.js"></script>
+
+
+    <div id="app">
+      <p>
+          {{name}}
+      </p>
+      <p v-if="name != 'Hello World'">
+          Name Updated!
+      </p>
+    
+      <button v-on:click="changeName">
+        Change Name
+      </button>
+      <button v-on:click="addElement">
+        New Element
+      </button>
+      <ul>
+        <li v-for="element in elements" v-bind:id="'No'+element" v-bind:style="{backgroundColor: getColor(element)}">
+          Element {{element}}
+        </li>
+      </ul>
+    </div>
+
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
+
