@@ -1,6 +1,7 @@
 <html>
   <head>
-      <link href="./css/bootstrap.min.css" rel="stylesheet">
+      <!--link href="./css/bootstrap.min.css" rel="stylesheet"-->
+      <link rel="stylesheet" href="./css/styles.css">
   </head>
   <body>
     <script src="vue.min.js"></script>
@@ -8,7 +9,8 @@
 
 
     <div id="app">
-      <p>
+      
+      <p v-bind:class="{updated: name == 'Hello World' ? false : true}">
           {{name}}
       </p>
       <p v-if="name != 'Hello World'">
