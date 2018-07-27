@@ -1,4 +1,27 @@
 
+
+Vue.component('app-username', {
+  data: function() {
+    return {
+      test: 'Chris'
+    }
+  },
+  temaplate: '<p>{{ test }}</p>',
+});
+
+
+Vue.component('test-name', {
+  data: function() {
+    return {
+      test: 'Chris'
+    }
+  },
+  temaplate: '<p>{{ test }}</p>',
+});
+
+
+
+
 new Vue({
   el: '#app',
   data: {
@@ -17,4 +40,12 @@ new Vue({
     }
   }
 });
+
+new Vue({
+  el:'#app2',
+  data: {
+    message: "Hello There!"
+  }
+});
+
 

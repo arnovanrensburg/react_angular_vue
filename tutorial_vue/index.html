@@ -1,6 +1,6 @@
 <html>
   <head>
-      <!--link href="./css/bootstrap.min.css" rel="stylesheet"-->
+      <link href="./css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="./css/styles.css">
   </head>
   <body>
@@ -16,6 +16,10 @@
       <p v-if="name != 'Hello World'">
           Name Updated!
       </p>
+
+      <app-username></app-username>
+      <p> hello </p>
+      <test-name></test-name>
     
       <button v-on:click="changeName">
         Change Name
@@ -29,6 +33,17 @@
         </li>
       </ul>
     </div>
+
+    <div id="app2">
+      <p>
+        Second Vue instance
+      </p>
+      <p>
+        {{message}}
+      </p>
+    </div>
+
+    
 
 
     <script src="js/script.js"></script>
