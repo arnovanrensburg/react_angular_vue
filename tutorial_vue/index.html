@@ -1,50 +1,52 @@
 <html>
-  <head>
-      <link href="./css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="./css/styles.css">
-  </head>
-  <body>
-    <script src="vue.min.js"></script>
-    <script src="../lodash.js"></script>
+
+<head>
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+  <script src="vue.min.js"></script>
+  <script src="../lodash.js"></script>
 
 
-    <div id="app">
-      <app-username></app-username>
-      <app-username></app-username>
+  <div id="app">
+    <app-username v-bind:username="'Chris'"></app-username>
+    <app-username v-bind:username="'Anna'"></app-username>
 
-      <p v-bind:class="{updated: name == 'Hello World' ? false : true}">
-          {{name}}
-      </p>
-      <p v-if="name != 'Hello World'">
-          Name Updated!
-      </p>
-    
-      <button v-on:click="changeName">
-        Change Name
-      </button>
-      <button v-on:click="addElement">
-        New Element
-      </button>
-      <ul>
-        <li v-for="element in elements" v-bind:id="'No'+element" v-bind:style="{backgroundColor: getColor(element)}">
-          Element {{element}}
-        </li>
-      </ul>
-    </div>
+    <p v-bind:class="{updated: name == 'Hello World' ? false : true}">
+      {{name}}
+    </p>
+    <p v-if="name != 'Hello World'">
+      Name Updated!
+    </p>
 
-    <div id="app2">
-      <p>
-        Second Vue instance
-      </p>
-      <p>
-        {{message}}
-      </p>
-    </div>
+    <button v-on:click="changeName">
+      Change Name
+    </button>
+    <button v-on:click="addElement">
+      New Element
+    </button>
+    <ul>
+      <li v-for="element in elements" v-bind:id="'No'+element" v-bind:style="{backgroundColor: getColor(element)}">
+        Element {{element}}
+      </li>
+    </ul>
+  </div>
 
-    
+  <div id="app2">
+    <p>
+      Second Vue instance
+    </p>
+    <p>
+      {{message}}
+    </p>
+  </div>
 
 
-    <script src="js/script.js"></script>
-  </body>
+
+
+  <script src="js/script.js"></script>
+</body>
+
 </html>
-

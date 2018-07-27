@@ -1,16 +1,12 @@
-
-
 Vue.component('app-username', {
-  data: function() {
+  props: ['username'],
+  data: function () {
     return {
-      username: 'Chris'
+      //username: 'Chris'
     };
   },
   template: '<p>{{ username }}</p>',
 });
-
-
-
 
 
 new Vue({
@@ -20,23 +16,24 @@ new Vue({
     elements: []
   },
   methods: {
-    changeName: function() {
+    changeName: function () {
       this.name = "Good Bye Cruel World";
     },
-    addElement: function() {
-      this.elements.push(this.elements.length+1);
+    addElement: function () {
+      this.elements.push(this.elements.length + 1);
     },
-    getColor: function(number) {
+    getColor: function (number) {
       return number % 2 == 0 ? 'green' : 'blue';
+    },
+    userWasClicked: function(name) {
+      alert(name);
     }
   }
 });
 
 new Vue({
-  el:'#app2',
+  el: '#app2',
   data: {
     message: "Hello There!"
   }
 });
-
-
