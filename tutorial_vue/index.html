@@ -9,17 +9,15 @@
 
 
     <div id="app">
-      
+      <app-username></app-username>
+      <app-username></app-username>
+
       <p v-bind:class="{updated: name == 'Hello World' ? false : true}">
           {{name}}
       </p>
       <p v-if="name != 'Hello World'">
           Name Updated!
       </p>
-
-      <app-username></app-username>
-      <p> hello </p>
-      <test-name></test-name>
     
       <button v-on:click="changeName">
         Change Name

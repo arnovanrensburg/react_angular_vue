@@ -3,21 +3,12 @@
 Vue.component('app-username', {
   data: function() {
     return {
-      test: 'Chris'
-    }
+      username: 'Chris'
+    };
   },
-  temaplate: '<p>{{ test }}</p>',
+  template: '<p>{{ username }}</p>',
 });
 
-
-Vue.component('test-name', {
-  data: function() {
-    return {
-      test: 'Chris'
-    }
-  },
-  temaplate: '<p>{{ test }}</p>',
-});
 
 
 
