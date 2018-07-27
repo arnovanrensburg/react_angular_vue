@@ -11,8 +11,8 @@
 
 
   <div id="app">
-    <app-username v-bind:username="'Chris'"></app-username>
-    <app-username v-bind:username="'Anna'"></app-username>
+    <app-username v-bind:username="'Chris'" v-on:usrclicked="userWasClicked($event)"></app-username>
+    <app-username v-bind:username="'Anna'" v-on:usrclicked="userWasClicked($event)"></app-username>
 
     <p v-bind:class="{updated: name == 'Hello World' ? false : true}">
       {{name}}

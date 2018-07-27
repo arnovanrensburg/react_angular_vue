@@ -5,7 +5,14 @@ Vue.component('app-username', {
       //username: 'Chris'
     };
   },
-  template: '<p>{{ username }}</p>',
+  //template: '<pv-on:click="usernameClicked">{{ username }}</p>',
+  template: '<p v-on:click="usernameClicked">{{ username }}</p>',
+  methods: {
+    usernameClicked: function() {
+      this.$emit('usrclicked', this.username);
+    }
+    
+  }
 });
 
 
