@@ -5,10 +5,9 @@ Vue.component('app-username', {
       //username: 'Chris'
     };
   },
-  //template: '<pv-on:click="usernameClicked">{{ username }}</p>',
   template: '<p v-on:click="usernameClicked">{{ username }}</p>',
   methods: {
-    usernameClicked: function() {
+    usernameClicked() {
       this.$emit('usrclicked', this.username);
     }
     
@@ -29,10 +28,10 @@ new Vue({
     addElement: function () {
       this.elements.push(this.elements.length + 1);
     },
-    getColor: function (number) {
+    getColor(number) {
       return number % 2 == 0 ? 'green' : 'blue';
     },
-    userWasClicked: function(name) {
+    userWasClicked(name) {
       alert(name);
     }
   }
