@@ -6,16 +6,23 @@ class App extends React.Component {
             name: props.name,
         };
     }
+
     changeName() {
         this.setState({
             name:'Anna',
         });
     }
+
     render() {
+        let updateParagraph = '';
+        if (this.state.name != this.props.name) {
+            updateParagraph = <p>Name Updated</p>;
+        }
         return (
             <div>
                 <p>{this.state.name}</p>
                 <button onClick={this.changeName.bind(this)}>Change Name</button>
+                {updateParagraph}
             </div>
         );
     }
