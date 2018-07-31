@@ -18,7 +18,6 @@ class App extends React.Component {
         this.setState({
             elements: oldElements.concat(oldElements.length+1)
         });
-
     }
 
     render() {
@@ -26,20 +25,33 @@ class App extends React.Component {
         if (this.state.name != this.props.name) {
             updateParagraph = <p>Name Updated</p>;
         }
+
+
+
         let list = this.state.elements.map(
-            (el) -> return <li>{el}</li>
-    );
+            (el) => {
+                const liStyle = {
+                    backgroundColor: el % 2 == 0 ?  'blue' : 'green'
+                };
+                return <li key={el} style={ liStyle }>Number {el}</li>
+            }
+        );
+
         return (
             <div>
                 <p>{this.state.name}</p>
+                {updateParagraph}
                 <button onClick={this.changeName.bind(this)}>Change Name</button>
                 <button onClick={this.addElement.bind(this)}>Add Element</button>
-                {updateParagraph}
                 <ul>
                     {list}
                 </ul>
-
             </div>
         );
     }
 }
+
+
+
+//const element = React.createElement('p',null,'Max');
+ReactDOM.render(<App name="Max"/>, document.querySelector('#app'));
