@@ -22,8 +22,10 @@ class App extends React.Component {
 
     render() {
         let updateParagraph = '';
+        let nameParagraphClass = '';
         if (this.state.name != this.props.name) {
             updateParagraph = <p>Name Updated</p>;
+            nameParagraphClass = 'updated';
         }
 
 
@@ -39,7 +41,7 @@ class App extends React.Component {
 
         return (
             <div>
-                <p>{this.state.name}</p>
+                <p className={nameParagraphClass}>{this.state.name}</p>
                 {updateParagraph}
                 <button onClick={this.changeName.bind(this)}>Change Name</button>
                 <button onClick={this.addElement.bind(this)}>Add Element</button>
