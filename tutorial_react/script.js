@@ -1,22 +1,13 @@
 
 
-let name = 'Max';
-
-function changeName() {
-    name = 'Anna'
-    const element = (
+function App(props) {
+    return (
         <div>
-            <p>{name}</p>
-            <button onClick={changeName}>Change Name</button>
-        </div>);
-    //const element = React.createElement('p',null,'Max');
-    ReactDOM.render(element, document.querySelector('#app'));
+            <p>{props.name}</p>
+            <button>Change Name</button>
+        </div>
+    );
 }
 
-const element = (
-    <div>
-        <p>{name}</p>
-        <button onClick={changeName}>Change Name</button>
-    </div>);
 //const element = React.createElement('p',null,'Max');
-ReactDOM.render(element, document.querySelector('#app'));
+ReactDOM.render(<App name="Max"/>, document.querySelector('#app'));
