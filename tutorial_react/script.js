@@ -1,3 +1,10 @@
+function Username(props) {
+    return (
+        <p onClick={() => {return props.nameClickedHandler(props.username)}}>{ props.username } </p>
+    );
+}
+
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -27,6 +34,10 @@ class App extends React.Component {
         });
     }
 
+    userWasClicked(name) {
+        alert(name);
+    }
+
     render() {
         let updateParagraph = '';
         let nameParagraphClass = '';
@@ -48,6 +59,8 @@ class App extends React.Component {
 
         return (
             <div>
+                <Username username="Chris" nameClickedHandler={this.userWasClicked}/>
+                <Username username="Anna" nameClickedHandler={this.userWasClicked}/>
                 <p className={nameParagraphClass}>{this.state.name}</p>
                 {updateParagraph}
                 <button onClick={this.changeName.bind(this)}>Change Name</button>
