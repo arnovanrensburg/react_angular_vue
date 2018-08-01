@@ -3,13 +3,14 @@ class App extends React.Component {
         super(props);
         this.state = {
             name: props.name,
-            elements: []
+            elements: [],
+            message: '',
         };
     }
 
     changeName() {
         this.setState({
-            name:'Anna',
+            name:'Danika',
         });
     }
 
@@ -17,6 +18,12 @@ class App extends React.Component {
         const oldElements = this.state.elements;
         this.setState({
             elements: oldElements.concat(oldElements.length+1)
+        });
+    }
+
+    changeMessageInput(event) {
+        this.setState({
+            message: event.target.value
         });
     }
 
@@ -48,6 +55,13 @@ class App extends React.Component {
                 <ul>
                     {list}
                 </ul>
+                <input
+                    type="text"
+                    value={this.state.message}
+                    onChange={this.changeMessageInput.bind(this)}
+                >
+                </input>
+                <p>{this.state.message}</p>
             </div>
         );
     }
