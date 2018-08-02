@@ -11,11 +11,20 @@ class App extends Component {
     return (
         <Router>
             <div>
-                <Route exact path="/" component={User}/>
-                <Route path="/info" component={Info}/>
-                <Route path="/user" component={User}/>
-                <Route path="/account" component={Account}/>
-                <Route path="/blog" component={Blog}/>
+                <div>
+                    <Link to="/">Home </Link> |
+                    <Link to="/info"> Info </Link> |
+                    <Link to="/account"> Account </Link> |
+                    <Link to="/blog"> Blog</Link>
+                </div>
+                <hr/>
+                <div>
+                    <Route exact path="/" component={User}/>
+                    <Route path="/info" component={Info}/>
+                    <Route path="/user" component={User}/>
+                    <Route path="/account" component={Account}/>
+                    <Route path="/blog" component={Blog}/>
+                </div>
             </div>
         </Router>
     );
